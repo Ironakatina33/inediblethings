@@ -1,0 +1,101 @@
+<style>
+
+body{
+  background-color:black;
+}
+.bgnoir{
+  background-color:black;
+}
+
+.hover-effect{
+    opacity: 1;
+}
+.hover-effect{
+    width:"100%";
+    height:"100%"
+    transition: 1s;
+}
+
+
+    
+    .hover-effect:hover {
+      width:"120%";
+    height:"120%"
+    }
+
+    img{border-radius:6px;}
+
+button{
+  outline:none;
+  text-decoration:none;
+  color:black;
+}
+
+.card{
+  background-color:#E9E0D6;
+  border: 10px solid #262626;
+  border-radius: 15px;
+}
+
+.container{
+  max-width: 1950px;
+}
+
+.textbl{
+  color:black;
+  background-color:#E9E0D6;
+}
+
+.containerfoot{
+  --bs-gutter-x:0;
+}
+</style>
+
+<p style="color: green"><%= notice %></p>
+
+
+<div class="fondu" id="articles">
+
+
+
+  <div class="album py-5 bgnoir">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-5">
+      <% @articles.each do |article| %>
+        <div class="col hover-effect">
+          <div class="card shadow-sm" >
+           <img width="100%" height="100%" src=" <%= article.image %> "  >
+            <div class="card-body">
+              <p class="card-text"> <%= article.title %> </p>
+              <p class="card-text"> <%= article.content %> </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">      <%= link_to "Voir l'article", article %>  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">    <a href="<%= article.image %>" download style>télécharger</a></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+ 
+
+  </div>
+
+<%= link_to "New article", new_article_path %>
+
+
+
+<div class="container containerfoot">
+  <footer class="py-3 my-4 textbl">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><img src="https://cdn.discordapp.com/attachments/1081128062806147104/1081243085285105675/Capture_decran_2023-03-03_a_16.53.37.png" class="nav-link px-2 text-muted"></li>
+    </ul>
+    <p class="text-center textbl">© 2023 Scrum Squad, Inc</p>
+  </footer>
+</div>

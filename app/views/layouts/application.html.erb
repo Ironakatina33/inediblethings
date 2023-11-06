@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inedible Thing</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "style.css", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <link rel="shortcut icon" href="/assets/images/logoo.png">
+  </head>
+
+<style>
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap');
+
+
+
+  .textnoir{
+  background-color:black;
+  color:white;
+  font-size:40px;
+  font-family: 'Fuzzy Bubbles', cursive;
+
+
+  }
+</style>
+
+  <body>
+  <div>
+
+
+    <div class="textnoir">
+    <div class="container" >
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a class="nav-link textnoir">Inedible Things</a></li>
+      </ul>
+    </header>
+    </div>
+  </div>
+    <%= yield %>
+  </body>
+</html>
